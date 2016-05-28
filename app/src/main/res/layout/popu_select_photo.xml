@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:id="@+id/popu_select_ll"
+   >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/tv_call_camera"
+        android:text = "拍摄"
+        android:textColor="@color/colormain"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:clickable="true"></TextView>
+
+    <View
+        android:layout_height="1px"
+        android:background="#000"
+        android:layout_width="fill_parent"
+        ></View>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/tv_call_gallery"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="@color/colormain"
+        android:textSize="15sp"
+        android:text="从相册选取"
+        android:clickable="true"/>
+    <View
+        android:layout_height="1px"
+        android:background="#000"
+        android:layout_width="fill_parent"></View>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/tv_cencel"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:textColor="@color/colormain"
+        android:text="取消"
+        android:clickable="true"/>
+
+</LinearLayout>
