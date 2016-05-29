@@ -1,6 +1,7 @@
 package com.android.botao.quxing.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 
 import com.android.botao.R;
+import com.android.botao.quxing.BangdanDetailActivity;
 import com.squareup.picasso.Picasso;
 
 
@@ -29,7 +31,16 @@ public class GoodAdapter extends RecyclerView.Adapter<GoodAdapter.ViewHolder> {
 
 private Context context;
 private List<String> goodsList;
+    // 添加Item点击事件接口
+    public OnItemClickListener itemClickListener;
 
+    public void setOnItemClickListener(OnItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
 public GoodAdapter(Context context, List<String> goodsList) {
         this.context = context;
         this.goodsList = goodsList;
@@ -46,11 +57,17 @@ public GoodAdapter(Context context, List<String> goodsList) {
     @Override
     public void onBindViewHolder(final GoodAdapter.ViewHolder holder, final int position) {
 
-
+        holder.img_good.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, BangdanDetailActivity.class);
+                context.startActivity(intent);
+            }
+        });
         if(position==0) {
             holder.tv_price.setText("2400人");
             //Log.e("GoodAdapter", Double.toString(good.getPrice()));
-            Picasso.with(context).load(R.drawable.list1).into(holder.img_good);
+            Picasso.with(context).load(R.drawable.list1).fit().into(holder.img_good);
 
 
 
@@ -60,7 +77,7 @@ public GoodAdapter(Context context, List<String> goodsList) {
         if(position==1) {
             holder.tv_price.setText("22400人");
             //Log.e("GoodAdapter", Double.toString(good.getPrice()));
-            Picasso.with(context).load(R.drawable.list2).into(holder.img_good);
+            Picasso.with(context).load(R.drawable.list2).fit().into(holder.img_good);
 
 
 
@@ -70,7 +87,7 @@ public GoodAdapter(Context context, List<String> goodsList) {
         if(position==2) {
             holder.tv_price.setText("122400人");
             //Log.e("GoodAdapter", Double.toString(good.getPrice()));
-            Picasso.with(context).load(R.drawable.list3).into(holder.img_good);
+            Picasso.with(context).load(R.drawable.list3).fit().into(holder.img_good);
 
 
 
@@ -80,7 +97,7 @@ public GoodAdapter(Context context, List<String> goodsList) {
         if(position==3) {
             holder.tv_price.setText("122人");
             //Log.e("GoodAdapter", Double.toString(good.getPrice()));
-            Picasso.with(context).load(R.drawable.list4).into(holder.img_good);
+            Picasso.with(context).load(R.drawable.list4).fit().into(holder.img_good);
 
 
 
@@ -97,12 +114,12 @@ public GoodAdapter(Context context, List<String> goodsList) {
     public int getItemCount() {
         return goodsList.size();
     }
-    public  static class ViewHolder extends RecyclerView.ViewHolder {
+    public   class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView img_good;
-        public TextView tv_good_name;
+
         public TextView tv_price;
-        public TextView text_zan;
+
         public CheckBox cb_zan;
 
 
@@ -116,7 +133,13 @@ public GoodAdapter(Context context, List<String> goodsList) {
             tv_price = (TextView) v.findViewById(R.id.tv_price);
 
             cb_zan = (CheckBox) v.findViewById(R.id.cb_zan);
-            Log.d("goodpter","加载UI");
+
+        }
+       @Override
+        public void onClick(View v) {
+            if (itemClickListener != null){
+                itemClickListener.onItemClick(v, getPosition());
+            }
         }
 
     }

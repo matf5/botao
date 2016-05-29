@@ -1,20 +1,42 @@
 package com.android.botao.quxing;
 
+/**
+ * Created by Administrator on 2016/5/29.
+ */
+
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Base64;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toolbar;
+
+import com.android.botao.R;
+import com.android.botao.quxing.tool.SelectPicPopupWindow;
+import com.iimedia.analytics.MobileClickAgent;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+
+
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.android.botao.R;
@@ -64,18 +86,23 @@ public class ReleaseActivity extends Activity {
             public void onClick(View v) {
                 //tv_save.setClickable(false);
                 menuWindow = new SelectPicPopupWindow(ReleaseActivity.this, itemsOnClick);
+
                 menuWindow.showAtLocation(ReleaseActivity.this.findViewById(R.id.main), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+
+
             }
         });
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(ReleaseActivity.this, MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
         //toolbar.setNavigationIcon(R.mipmap.cmenu);//设置导航栏图标
         //toolbar.setLogo(R.mipmap.ic_launcher);//设置app logo
-       // toolbar.setTitle("");//设置主标题
+        // toolbar.setTitle("");//设置主标题
         //toolbar.setSubtitle("Subtitle");//设置子标题
 //        toolbar.inflateMenu(R.menu.menu_main);
         init();
@@ -178,9 +205,11 @@ public class ReleaseActivity extends Activity {
     }
     private void init(){
         back = (ImageView)findViewById(R.id.back);
+        back.setImageResource(R.drawable.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 finish();
             }
         });

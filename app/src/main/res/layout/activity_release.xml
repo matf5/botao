@@ -16,7 +16,7 @@
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:id="@+id/back"
-            android:background="@drawable/back"
+
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:background="#00bbd3"
         ></Toolbar>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,6 +41,6 @@
             android:layout_height="match_parent" />
     </RelativeLayout>
 
-
+    <include layout="@layout/layout_custom_drawer" />
 
 </LinearLayout>

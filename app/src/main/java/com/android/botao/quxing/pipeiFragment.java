@@ -36,10 +36,10 @@ public class pipeiFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         load();
-        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.mipmap.cmenu);//设置导航栏图标
-        //toolbar.setLogo(R.mipmap.ic_launcher);//设置app logo
-       toolbar.setTitle("趣行");//设置主标题
+//        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+//        toolbar.setNavigationIcon(R.mipmap.cmenu);//设置导航栏图标
+//        //toolbar.setLogo(R.mipmap.ic_launcher);//设置app logo
+//       toolbar.setTitle("趣行");//设置主标题
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,7 +54,7 @@ public class pipeiFragment extends Fragment {
         mpipeiAdapter.setOnItemClickListener(new pipeiAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getActivity(),WebViewTaoBaoActivity.class);
+                Intent intent = new Intent(getActivity(),QuxingDetailActivity.class);
                 startActivity(intent);
             }
         });

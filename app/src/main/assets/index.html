@@ -28,7 +28,7 @@
 				margin-top: 50px;
 			}
 		</style>
-		<div class="mui-content">
+		<div class="mui-content" style="height: 265px;">
 			<div id="slider" class="mui-slider">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 					<a class="mui-control-item" href="#item1mobile">
@@ -43,51 +43,54 @@
 					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
 						<div id="scroll1" class="mui-scroll-wrapper">
 							<div class="mui-scroll" >
-								<div style="height: 38px;border-bottom:1px solid;border-bottom-color:#DCDADA;">
-									<div style="line-height: 38px;display: inline;margin-left: 163px;font-size: 16px;">广州市</div>
-									<div style="line-height: 38px;margin-left: auto;display:inline;color: grey;font-size: 10px;">我的位置</div>
+								<div style="height: 38px;border-bottom:1px solid;border-bottom-color:#DCDADA;text-align: center;">
+									<div style="line-height: 38px;display: inline;margin-left: 20%;font-size: 16px;">广州市</div>
+									<div style="line-height: 38px;margin-left: auto;display:inline;color: grey;font-size: 10px;"><a id="icon-location"><span class="mui-icon mui-icon-paperplane"></span></a>我的位置</div>
 								</div>
-								<div style="height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;">
-									<button id='demo1' data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="btn mui-btn mui-btn-block" style="color: #00BBD3;margin-left: 20%;margin-right: 10%;margin-top:6px;width:60px;height:30px;border-radius:8px;border-color: #00BBD3;padding-top: 0;padding-bottom: 0;font-size: 10px;display: inline;margin-bottom: 0;">入住日期</button>
-									<div style="color: gray;display: inline;line-height: 45px;margin-right: 10%;">共1晚</div>
-									<button id='demo2' data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="btn mui-btn mui-btn-block" style="color: #00BBD3;margin-left: auto;margin-top:6px;width:60px;height:30px;border-radius:8px;border-color: #00BBD3;padding-top: 0;padding-bottom: 0;font-size: 10px;display: inline;margin-bottom: 0;">离开日期</button>	
+								<div style="height: 66px;text-align: center;">
+									<button id='demo1' data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="btn mui-btn mui-btn-block" style="display: inline;color: #00BBD3;margin-left: auto;margin-top:6px;width:60px;height:30px;border-radius:8px;border-color: #00BBD3;padding-top: 0;padding-bottom: 0;font-size: 10px;display: inline;margin-bottom: 0;">离开日期</button>	
+									<div id='sum' style="color: gray;display: inline;line-height: 45px;margin-right: auto;">共1晚</div>
+									<button id='demo2' data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="btn mui-btn mui-btn-block" style="color: #00BBD3;display: inline;margin-left: auto;margin-top:6px;width:60px;height:30px;border-radius:8px;border-color: #00BBD3;padding-top: 0;padding-bottom: 0;font-size: 10px;display: inline;margin-bottom: 0;">离开日期</button>	
+									<div style="text-align: center;">
+										<div id='result1' class="ui-alert" style="display: inline;margin-right: 10px;">2016-05-29</div>
+										<div id='result2' class="ui-alert" style="display: inline;margin-left: 20px;">2016-05-30</div>
+									</div>
+									
 								</div>
-								<div class="mui-placeholder" style="height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;line-height: 45px;color: grey;text-align: center;">
-									关键字/酒店/地址		
-								</div>
-								<div class="mui-placeholder" style="height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;line-height: 45px;color: grey;text-align: center;">
-									价格/星级		
-								</div>
-								<div style="height:40px;background-color: #00BBD3;text-align: center;">
-									<a href="#" style="line-height: 40px;outline: none;background-color: #00BBD3;color: #FFFFFF;">查找酒店</a>
-								</div>
-								
+							<form class="mui-input-group">
+								<div class="mui-input-row" style="border-bottom: 0.1px solid;border-bottom-color: #dcdada;"><input type="text" class="mui-input-clear" placeholder="关键字/酒店/地址" style="font-size:12px;height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;line-height: 45px;color: grey;text-align: center;"></div>
+								<div class="mui-input-row"><input type="text" class="mui-input-clear" placeholder="价格/星级" style="font-size:12px;height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;line-height: 45px;color: grey;text-align: center;"></div>
+							</form>
+							<div style="height:auto;background-color: #00BBD3;text-align: center;">
+								<a href="hotelDetail.html" style="line-height: 30px;outline: none;background-color: #00BBD3;color: #FFFFFF;"><span class="mui-icon mui-icon-search" style="font-size: 18px;"></span>查找酒店</a>
+							</div>	
 							</div>
 						</div>
 					</div>
 					<div id="item2mobile" class="mui-slider-item mui-control-content">
 						<div id="scroll2" class="mui-scroll-wrapper">
 							<div class="mui-scroll">
-							<!--	<div class="mui-loading">-->
-									<div style="height: 38px;border-bottom:1px solid;border-bottom-color:#DCDADA;">
-									<div style="line-height: 38px;display: inline;margin-left: 163px;font-size: 16px;">马尔代夫</div>
-									<div style="line-height: 38px;margin-left: auto;display:inline;color: grey;font-size: 10px;">我的位置</div>
+								<div style="height: 38px;border-bottom:1px solid;border-bottom-color:#DCDADA;text-align: center;">
+									<div style="line-height: 38px;display: inline;margin-left: 20%;font-size: 16px;">马尔代夫</div>
+									<div style="line-height: 38px;margin-left: auto;display:inline;color: grey;font-size: 10px;"><a id="icon-location"><span class="mui-icon mui-icon-paperplane"></span></a>我的位置</div>
 								</div>
-								<div style="height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;">
-									<button id='demo11' data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="btn mui-btn mui-btn-block" style="color: #00BBD3;margin-left: 20%;margin-right: 10%;margin-top:6px;width:60px;height:30px;border-radius:8px;border-color: #00BBD3;padding-top: 0;padding-bottom: 0;font-size: 10px;display: inline;margin-bottom: 0;">入住日期</button>
-									<div style="color: gray;display: inline;line-height: 45px;margin-right: 10%;">共1晚</div>
-									<button id='demo22' data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="btn mui-btn mui-btn-block" style="color: #00BBD3;margin-left: auto;margin-top:6px;width:60px;height:30px;border-radius:8px;border-color: #00BBD3;padding-top: 0;padding-bottom: 0;font-size: 10px;display: inline;margin-bottom: 0;">离开日期</button>
+								<div style="height: 66px;text-align: center;">
+									<button id='demo3' data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="btn mui-btn mui-btn-block" style="display: inline;color: #00BBD3;margin-left: auto;margin-top:6px;width:60px;height:30px;border-radius:8px;border-color: #00BBD3;padding-top: 0;padding-bottom: 0;font-size: 10px;display: inline;margin-bottom: 0;">离开日期</button>	
+									<div id='sum' style="color: gray;display: inline;line-height: 45px;margin-right: auto;">共1晚</div>
+									<button id='demo4' data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="btn mui-btn mui-btn-block" style="color: #00BBD3;display: inline;margin-left: auto;margin-top:6px;width:60px;height:30px;border-radius:8px;border-color: #00BBD3;padding-top: 0;padding-bottom: 0;font-size: 10px;display: inline;margin-bottom: 0;">离开日期</button>	
+									<div style="text-align: center;">
+										<div id='result3' class="ui-alert" style="display: inline;margin-right: 10px;">2016-05-29</div>
+										<div id='result4' class="ui-alert" style="display: inline;margin-left: 20px;">2016-05-30</div>
+									</div>
+									
 								</div>
-								<div class="mui-placeholder" style="height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;line-height: 45px;color: grey;text-align: center;">
-									关键字/酒店/地址		
-								</div>
-								<div class="mui-placeholder" style="height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;line-height: 45px;color: grey;text-align: center;">
-									价格/星级		
-								</div>
-								<div style="height:40px;background-color: #00BBD3;text-align: center;">
-									<a href="#" style="line-height: 40px;outline: none;background-color: #00BBD3;color: #FFFFFF;">查找酒店</a>
-								</div>
-							 	<!--</div>-->
+							<form class="mui-input-group">
+								<div class="mui-input-row" style="border-bottom: 0.1px solid;border-bottom-color: #dcdada;"><input type="text" class="mui-input-clear" placeholder="关键字/酒店/地址" style="font-size:12px;height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;line-height: 45px;color: grey;text-align: center;"></div>
+								<div class="mui-input-row"><input type="text" class="mui-input-clear" placeholder="价格/星级" style="font-size:12px;height: 45px;border-bottom:1px solid;border-bottom-color:#DCDADA;line-height: 45px;color: grey;text-align: center;"></div>
+							</form>
+							<div style="height:auto;background-color: #00BBD3;text-align: center;">
+								<a href="hotelDetail.html" style="line-height: 30px;outline: none;background-color: #00BBD3;color: #FFFFFF;"><span class="mui-icon mui-icon-search" style="font-size: 18px;"></span>查找酒店</a>
+							</div>
 						</div>
 					</div>
 
@@ -103,9 +106,15 @@
 				<script>
 			(function($) {
 				$.init();
-				var result = $('#result')[0];
-				var btns = $('.btn');
-				btns.each(function(i, btn) {
+				var result1 = $('#result1')[0];
+				var result2 = $('#result2')[0];
+				var result3 = $('#result3')[0];
+				var result4 = $('#result4')[0];
+				var btns1 = $('#demo1');
+				var btns2 = $('#demo2');
+				var btns3 = $('#demo3');
+				var btns4 = $('#demo4');
+				btns1.each(function(i, btn) {
 					btn.addEventListener('tap', function() {
 						var optionsJson = this.getAttribute('data-options') || '{}';
 						var options = JSON.parse(optionsJson);
@@ -126,7 +135,7 @@
 							 * rs.h 时，用法同年
 							 * rs.i 分（minutes 的第二个字母），用法同年
 							 */
-							result.innerText = '选择结果: ' + rs.text;
+							result1.innerText = rs.text;
 							/* 
 							 * 返回 false 可以阻止选择框的关闭
 							 * return false;
@@ -137,6 +146,42 @@
 							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
 							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
 							 */
+							picker.dispose();
+						});
+					}, false);
+				});
+				btns2.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							result2.innerText = rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+				btns3.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							result3.innerText = rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+				btns4.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							result4.innerText = rs.text;
 							picker.dispose();
 						});
 					}, false);

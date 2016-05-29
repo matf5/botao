@@ -6,18 +6,23 @@ import android.content.Intent;
 import android.graphics.Color;
 
 
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.android.botao.R;
@@ -36,18 +41,34 @@ public class MainActivity extends FragmentActivity {
     private ViewPager viewPager;
     private LayoutInflater inflate;
     private ImageView add;
+    private DrawerLayout drawerLayout;
 
+    private LinearLayout drawerContent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        drawerContent = (LinearLayout) findViewById(R.id.drawerContent);
         names = new String[3];
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.mipmap.ic_launcher);//设置导航栏图标
+        toolbar.setNavigationIcon(R.mipmap.cmenu);//设置导航栏图标
         //toolbar.setLogo(R.mipmap.ic_launcher);//设置app 趣行
         toolbar.setTitle("趣行");//设置主标题
         toolbar.setTitleTextColor(Color.WHITE);
+        ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.add, R.string.app_name, R.string.app_name){
+            public void onDrawerClosed(View view) {
+                invalidateOptionsMenu();}
+
+
+            public void onDrawerOpened(View drawerView) {
+                invalidateOptionsMenu();
+            }
+        };
+
+        //mDrawerToggle.syncState();
+        drawerLayout.setDrawerListener(mDrawerToggle);
         //toolbar.setSubtitle("Subtitle");//设置子标题
 //        toolbar.inflateMenu(R.menu.menu_main);
         init();
@@ -92,6 +113,21 @@ public class MainActivity extends FragmentActivity {
 
 
 
+    }
+
+    public void onClick(View v) {
+        // 关闭DrawerLayout
+        drawerLayout.closeDrawer(drawerContent);
+        switch (v.getId()) {
+
+            case R.id.text1:
+
+                Toast.makeText(MainActivity.this, "我的收藏", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.text2:
+                Toast.makeText(MainActivity.this, "我的关注", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
     private class MyAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter {
 

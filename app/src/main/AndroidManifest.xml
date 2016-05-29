@@ -16,7 +16,7 @@
         <meta-data android:value="Channelid" android:name="IIMEDIA_CHANNEL"/>
 
         <activity
-            android:name=".quxing.MainActivity"
+            android:name=".quxing.ReleaseActivity2"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".quxing.ChatDetailActivity"></activity>
+        <activity android:name=".quxing.ChatDetailActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name=".quxing.ReleaseActivity"></activity>
         <activity android:name=".quxing.WebViewTaoBaoActivity"></activity>
+        <activity android:name=".quxing.BangdanDetailActivity"></activity>
+        <activity android:name=".quxing.QuxingDetailActivity"></activity>
+        <activity android:name=".quxing.MainActivity"></activity>
     </application>
 
 </manifest>
